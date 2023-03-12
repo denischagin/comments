@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+p {
+  color: #000000;
+  font-size: 18px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1070px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.username {
+  font-weight: 500;
+  font-size: 18px;
+  
+  color: #122AC0;
+}
+
+.icon {
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}

@@ -1,0 +1,73 @@
+.comments_wrapper {
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.comments_column {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 30px;
+}
+
+.comment_title {
+    display: flex;
+    margin-bottom: 11px;
+}
+
+.comment_title p:first-child {
+    margin-right: 15px;
+}
+
+.comment_text {
+    margin-bottom: 14px;
+}
+
+.comment_panel {
+    display: flex;
+}
+
+.comment_panel > button {
+    color: rgb(104, 104, 104);
+    border: none;
+    background-color: transparent;
+    font-size: 17px;
+}
+
+.comment_panel > * + * {
+    margin-left: 19px;
+}
+
+/* .reply_button {
+    
+} */
+
+.likes_wrapper {
+    display: flex;
+}
+
+.likes_wrapper button {
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.likes_wrapper > * + * {
+    margin-left: 10px;
+}
+
+.plus {
+    color: green
+}
+
+.minus {
+    color: red
+}
+
