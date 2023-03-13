@@ -59,6 +59,11 @@
     font-size: 18px;
     line-height: 22px;
     
-    color: #00000076;
-    cursor: pointer;
+    color: #000000aa;
+}
+
+.inactive {
+    background-color: #6a6a6a;
+    color: #00000050;
+    cursor: default;
 }
