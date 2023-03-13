@@ -55,7 +55,13 @@ const FormAddComment = () => {
           value={value}
           onChange={changeHandler}/>
       </div>
-      <button className={classes.send_button} onClick={clickHandler}>Отправить</button>
+      <button 
+        className={
+          value.length > 1000 || value.length === 0
+            ? [classes.send_button, classes.inactive].join(' ')
+            : classes.send_button
+          } 
+        onClick={clickHandler}>Отправить</button>
     </div>
   )
 }
