@@ -2,11 +2,15 @@ import React, { memo } from 'react'
 import { useCommentTime } from './../../../hooks/useCommentTime';
 import classes from "./style.module.css"
 import { useDispatch } from 'react-redux';
-import { decrementLike, incrementLike, removeComment } from '../../../store/slicers/commentsSlicer';
+import { decrementLike, incrementLike, inFavorites, removeComment } from '../../../store/slicers/commentsSlicer';
 
-const Comment = function({ comment, isReply }) {
+const Comment = function({ comment, isReply, onReply }) {
     const commentTime = useCommentTime(new Date(comment.time))
     const dispatch = useDispatch()
+
+    const clickInFavoritesHandler = () => {
+        dispatch(inFavorites(comment.id));
+    }
 
     const clickMinusHandler = () => {
         dispatch(decrementLike(comment.id))
@@ -17,7 +21,6 @@ const Comment = function({ comment, isReply }) {
     }
 
     const clickDeleteHandler = () => {
-        console.log(comment.id)
         dispatch(removeComment(comment.id))
     }
 
@@ -36,9 +39,12 @@ const Comment = function({ comment, isReply }) {
                 <p className={classes.comment_text}>
                     {comment.text}
                 </p>
+
                 <div className={classes.comment_panel}>
-                    {!isReply && <button className={classes.reply_button}>Ответить</button>}
-                    <button>В избранном</button>
+                    {!isReply && <button className={classes.reply_button} onClick={onReply}>Ответить</button>}
+                    <button onClick={clickInFavoritesHandler}>
+                        <span className={comment.inFavorites ? classes.in_favorites : null}>★</span> В избранном
+                    </button>
                     <div className={classes.likes_wrapper}>
                         <button onClick={clickMinusHandler} className={classes.minus}>-</button>
                         <p>{comment.likes}</p>

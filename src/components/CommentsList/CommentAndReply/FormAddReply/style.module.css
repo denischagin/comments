@@ -1,0 +1,36 @@
+.comments_reply_form {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.comments_reply_form * {
+    font-size: 15px;
+
+}
+
+.comments_reply_form input {
+    width: 400px;
+    padding: 5px 10px;
+}
+
+.comments_reply_form * + * {
+    margin-left: 10px;
+}
+
+.comments_reply_form button {
+    background-color: transparent;
+    border: none;
+}
+
+.exit {
+    font-weight: 600;
+    font-size: 24px;
+    color: grey
+}
+
+.send {
+    font-size: 30px;
+    line-height: 1.2;
+    color: grey
+}

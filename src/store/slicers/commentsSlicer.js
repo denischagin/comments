@@ -14,7 +14,7 @@ const initialState = {
                     id: 2,
                     username: "Андрей Студио",
                     text: "И тебе привет",
-                    inFavorites: false,
+                    inFavorites: true,
                     time: Date.now(),
                     likes: 4,
                 },
@@ -84,8 +84,30 @@ const commentsSlices = createSlice({
             })
         },
 
+        inFavorites (state, action) {
+            state.comments.forEach((comment) => {
+                if (comment.id === action.payload) return comment.inFavorites = !comment.inFavorites;
+
+                comment.commentsReply.forEach((com) => {
+                    if (com.id === action.payload) return com.inFavorites = !com.inFavorites;
+                })
+            })
+        },
+
+        addReply (state, action) {
+            state.comments.forEach((comment) => {
+                if (comment.id === action.payload.commentId) return comment.commentsReply.push(action.payload.newReply);
+            })
+        }
+
     }
 })
 
 export default commentsSlices.reducer;
-export const {addComment, removeComment, incrementLike, decrementLike} = commentsSlices.actions;
+export const {
+    addComment, 
+    removeComment, 
+    incrementLike, 
+    decrementLike, 
+    inFavorites, 
+    addReply} = commentsSlices.actions;
