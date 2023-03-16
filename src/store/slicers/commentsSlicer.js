@@ -34,7 +34,7 @@ const initialState = {
             text: "Всем привет!",
             inFavorites: false,
             time: Date.now(),
-            likes: 3,
+            likes: 5,
             commentsReply: [
                 {
                     id: 5,
@@ -46,7 +46,36 @@ const initialState = {
                 }
             ]
         },
+    ],
+    favoritesList: [
+        {
+            id: 1,
+            username: "Щека Реакт",
+            text: "Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! ",
+            inFavorites: false,
+            time: Date.now(),
+            likes: 3,
+            commentsReply: [
+                {
+                    id: 2,
+                    username: "Андрей Студио",
+                    text: "И тебе привет",
+                    inFavorites: true,
+                    time: Date.now(),
+                    likes: 4,
+                },
+                {
+                    id: 3,
+                    username: "Евгений",
+                    text: "И тебе привет",
+                    inFavorites: false,
+                    time: Date.now(),
+                    likes: 4,
+                },
+            ]
+        },
     ]
+
 }
 
 const commentsSlices = createSlice({
@@ -86,10 +115,16 @@ const commentsSlices = createSlice({
 
         inFavorites (state, action) {
             state.comments.forEach((comment) => {
-                if (comment.id === action.payload) return comment.inFavorites = !comment.inFavorites;
+                if (comment.id === action.payload) {
+                    state.favoritesList.push(comment)
+                    return comment.inFavorites = !comment.inFavorites
+                };
 
                 comment.commentsReply.forEach((com) => {
-                    if (com.id === action.payload) return com.inFavorites = !com.inFavorites;
+                    if (com.id === action.payload) {
+                        state.favoritesList.push(comment)
+                        return com.inFavorites = !com.inFavorites
+                    };
                 })
             })
         },
@@ -98,6 +133,23 @@ const commentsSlices = createSlice({
             state.comments.forEach((comment) => {
                 if (comment.id === action.payload.commentId) return comment.commentsReply.push(action.payload.newReply);
             })
+        },
+
+        sortedCommentsBy(state, action) {
+            switch (action.payload) {
+                case "like/ASC" :
+                    state.comments.sort((a, b) => a.likes - b.likes)
+                    break;
+                case "like/DESC":
+                    state.comments.sort((a, b) => b.likes - a.likes)
+                    break;
+                case "date/ASC" :
+                    state.comments.sort((a, b) => b.time - a.time)
+                    break;
+                case "date/DESC":
+                    state.comments.sort((a, b) => a.time - b.time)
+                    break;
+            }
         }
 
     }
@@ -110,4 +162,6 @@ export const {
     incrementLike, 
     decrementLike, 
     inFavorites, 
-    addReply} = commentsSlices.actions;
+    addReply,
+    sortedCommentsBy
+} = commentsSlices.actions;

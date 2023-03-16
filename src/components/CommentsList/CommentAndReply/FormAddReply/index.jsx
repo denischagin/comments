@@ -19,6 +19,7 @@ const FormAddReply = ({ closeForm ,username, commentId }) => {
   const onSubmitHandler = (e) => {
     e.preventDefault()
     closeForm();
+    console.log(commentId)
     dispatch(addReply({
       newReply: {
         id: Date.now(),
@@ -36,7 +37,6 @@ const FormAddReply = ({ closeForm ,username, commentId }) => {
   return (
     <form 
       className={classes.comments_reply_form}
-      onSubmit={onSubmitHandler}
       >
         <button 
           className={classes.exit}
@@ -47,7 +47,7 @@ const FormAddReply = ({ closeForm ,username, commentId }) => {
               type='text'
               value={value}
               onChange={onChangeHandler}/>
-        <button type="button" className={classes.send}>➤</button>
+        <button onClick={onSubmitHandler} type="button" className={classes.send}>➤</button>
     </form>
   )
 }

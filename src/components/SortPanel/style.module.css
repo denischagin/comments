@@ -1,6 +1,7 @@
 .sort_panel {
     display: flex;
     padding: 20px 0;
+    align-items: center;
 }
 
 .sort_panel_item {
@@ -11,9 +12,6 @@
     padding: 4px;
 }
 
-.sort_panel_item + .sort_panel_item {
-    margin-left: 55px;
-}
 
 .active {
     color: black;

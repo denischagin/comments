@@ -1,9 +1,11 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 import classes from './style.module.css'
 import { useSelector } from 'react-redux/es/exports';
+import SortedList from './SortedList';
 
 const SortPanel = () => {
     const { comments } = useSelector(state => state.comments)
+    const [sortedListActive, setSortedListActive] = useState(false);
 
     const commentsCount = useMemo(() => {
         let result = 0;
@@ -20,7 +22,7 @@ const SortPanel = () => {
                 <span >Комментарии</span>
                 <span className={classes.sort_panel_item_grey}>({commentsCount})</span>
             </p>
-            <p className={classes.sort_panel_item}>По количеству оценок</p>
+            <SortedList active={sortedListActive} setActive={setSortedListActive} className={classes.sort_panel_item}/>
             <p className={classes.sort_panel_item}>Избранное</p>
         </div>
     )

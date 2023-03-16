@@ -1,0 +1,43 @@
+.wrapper {
+    margin: 0 40px;
+    position: relative;
+}
+
+.title {
+    text-align: center;
+    width: 210px;
+    text-decoration-line: underline;
+    color: grey;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.sorted_list {
+    display: none;
+    
+}
+
+.sorted_list li {
+    cursor: pointer;
+    line-height: 1.2;
+    background-color: white;
+    padding: 5px 10px;
+}
+
+.sorted_list :hover {
+    background-color: rgba(0, 0, 0, 0.084);
+}
+
+
+
+.active {
+    display: flex;
+    position: absolute;
+    top: 35px;
+    padding: 7px 7px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    flex-direction: column;
+}

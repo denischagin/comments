@@ -8,8 +8,7 @@ const CommentsList = () => {
 	return (
 		<div>
 			{comments.length !== 0
-				?
-				comments.map(comment =>
+				? comments.map(comment =>
 					<CommentAndReply key={comment.id} comment={comment} />
 				)
 				: <p>Комментариев нет</p>

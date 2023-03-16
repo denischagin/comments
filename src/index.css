@@ -31,6 +31,10 @@ input {
   color: rgba(0, 0, 0, 0.7);
 }
 
+li {
+  list-style: none;
+}
+
 .container {
   max-width: 1070px;
   margin: 0 auto;
