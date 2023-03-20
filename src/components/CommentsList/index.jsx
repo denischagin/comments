@@ -5,6 +5,7 @@ import CommentAndReply from './CommentAndReply'
 
 const CommentsList = () => {
 	const { comments } = useSelector(state => state.comments)
+	
 	return (
 		<div>
 			{comments.length !== 0

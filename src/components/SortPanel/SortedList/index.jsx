@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux'
 import { sortedCommentsBy } from '../../../store/slicers/commentsSlicer'
 import classes from './style.module.css'
 
-const SortedList = ({ active, setActive }) => {
+const SortedList = () => {
+    const [active, setActive] = useState(false);
     const [selectValue, setSelectValue] = useState("Сначала новые")
     const dispatch = useDispatch();
 

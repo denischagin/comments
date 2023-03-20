@@ -19,7 +19,6 @@ const FormAddReply = ({ closeForm ,username, commentId }) => {
   const onSubmitHandler = (e) => {
     e.preventDefault()
     closeForm();
-    console.log(commentId)
     dispatch(addReply({
       newReply: {
         id: Date.now(),

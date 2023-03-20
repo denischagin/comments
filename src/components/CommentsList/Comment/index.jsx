@@ -7,7 +7,7 @@ import { decrementLike, incrementLike, inFavorites, removeComment } from '../../
 const Comment = function({ comment, isReply, onReply }) {
     const commentTime = useCommentTime(new Date(comment.time))
     const dispatch = useDispatch()
-
+    
     const clickInFavoritesHandler = () => {
         dispatch(inFavorites(comment.id));
     }
@@ -57,4 +57,4 @@ const Comment = function({ comment, isReply, onReply }) {
     )
 }
 
-export default Comment
+export default React.memo(Comment, (oldProps, newProps) => oldProps.comment.id === newProps.comment.id)
