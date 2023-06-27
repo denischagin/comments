@@ -22,7 +22,7 @@ const Comment = function ({ comment, isReply, onReply }) {
 
     return (
         <div className={classes.comments_wrapper}>
-            <img src="src\assets\cheek.jpg" className="icon" alt="" />
+            <img src="http://cdn.onlinewebfonts.com/svg/img_453063.png" className="icon" alt="profile icon" />
             <div className={classes.comments_column}>
                 <div className={classes.comment_title}>
                     <p className='username'>
