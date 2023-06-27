@@ -1,80 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { dataComments } from "../../data/dataComments";
+import { dataFavorites } from './../../data/dataFavorites';
+
 
 const initialState = {
-    comments: [
-        {
-            id: 1,
-            username: "Щека Реакт",
-            text: "Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! ",
-            inFavorites: false,
-            time: Date.now(),
-            likes: 3,
-            commentsReply: [
-                {
-                    id: 2,
-                    username: "Андрей Студио",
-                    text: "И тебе привет",
-                    inFavorites: true,
-                    time: Date.now(),
-                    likes: 4,
-                },
-                {
-                    id: 3,
-                    username: "Евгений",
-                    text: "И тебе привет",
-                    inFavorites: false,
-                    time: Date.now(),
-                    likes: 4,
-                },
-            ]
-        },
-        {
-            id: 4,
-            username: "Тихон Сильверсторович Орешкин",
-            text: "Всем привет!",
-            inFavorites: false,
-            time: Date.now(),
-            likes: 5,
-            commentsReply: [
-                {
-                    id: 5,
-                    username: "Андрей",
-                    text: "И тебе привет",
-                    inFavorites: false,
-                    time: Date.now(),
-                    likes: 4,
-                }
-            ]
-        },
-    ],
-    favoritesList: [
-        {
-            id: 1,
-            username: "Щека Реакт",
-            text: "Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! Всем привет! ",
-            inFavorites: false,
-            time: Date.now(),
-            likes: 3,
-            commentsReply: [
-                {
-                    id: 2,
-                    username: "Андрей Студио",
-                    text: "И тебе привет",
-                    inFavorites: true,
-                    time: Date.now(),
-                    likes: 4,
-                },
-                {
-                    id: 3,
-                    username: "Евгений",
-                    text: "И тебе привет",
-                    inFavorites: false,
-                    time: Date.now(),
-                    likes: 4,
-                },
-            ]
-        },
-    ]
+    comments: dataComments,
+    favoritesList: dataFavorites
 
 }
 

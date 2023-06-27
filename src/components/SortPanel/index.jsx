@@ -9,7 +9,6 @@ const SortPanel = () => {
         <div className={classes.sort_panel}>
             <SortPanelTitle />
             <SortedList className={classes.sort_panel_item}/>
-            <p className={classes.sort_panel_item}>Избранное</p>
         </div>
     )
 }
