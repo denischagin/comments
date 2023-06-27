@@ -3,6 +3,7 @@ import { useCommentTime } from './../../../hooks/useCommentTime';
 import classes from "./style.module.css"
 import { useDispatch } from 'react-redux';
 import { decrementLike, incrementLike, inFavorites, removeComment } from '../../../store/slicers/commentsSlicer';
+import profileLogo from "../../../assets/logo.png"
 
 const Comment = function ({ comment, isReply, onReply }) {
     const commentTime = useCommentTime(new Date(comment.time))
@@ -22,7 +23,7 @@ const Comment = function ({ comment, isReply, onReply }) {
 
     return (
         <div className={classes.comments_wrapper}>
-            <img src="http://cdn.onlinewebfonts.com/svg/img_453063.png" className="icon" alt="profile icon" />
+            <img src={profileLogo} className="icon" alt="profile icon" />
             <div className={classes.comments_column}>
                 <div className={classes.comment_title}>
                     <p className='username'>

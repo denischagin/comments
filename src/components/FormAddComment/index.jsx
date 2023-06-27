@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addComment } from '../../store/slicers/commentsSlicer'
 import classes from './style.module.css' 
+import profileLogo from "../../assets/logo.png"
 
 const FormAddComment = () => {
   const [value, setValue] = useState('')
@@ -29,7 +30,7 @@ const FormAddComment = () => {
   return (
     <div className={classes.form}>
       <div className={classes.form_img}>
-        <img src="http://cdn.onlinewebfonts.com/svg/img_453063.png" className='icon' alt="profile" />
+        <img src={profileLogo} className='icon' alt="profile" />
       </div>
 
       <div className={classes.input_wrapper}>
