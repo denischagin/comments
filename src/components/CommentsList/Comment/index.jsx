@@ -4,25 +4,21 @@ import classes from "./style.module.css"
 import { useDispatch } from 'react-redux';
 import { decrementLike, incrementLike, inFavorites, removeComment } from '../../../store/slicers/commentsSlicer';
 
-const Comment = function({ comment, isReply, onReply }) {
+const Comment = function ({ comment, isReply, onReply }) {
     const commentTime = useCommentTime(new Date(comment.time))
     const dispatch = useDispatch()
 
-    const clickInFavoritesHandler = () => {
+    const clickInFavoritesHandler = () =>
         dispatch(inFavorites(comment.id));
-    }
 
-    const clickMinusHandler = () => {
+    const clickMinusHandler = () =>
         dispatch(decrementLike(comment.id))
-    }
 
-    const clickPlusHandler = () => {
+    const clickPlusHandler = () =>
         dispatch(incrementLike(comment.id))
-    }
 
-    const clickDeleteHandler = () => {
+    const clickDeleteHandler = () =>
         dispatch(removeComment(comment.id))
-    }
 
     return (
         <div className={classes.comments_wrapper}>
