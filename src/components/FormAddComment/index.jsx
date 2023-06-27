@@ -29,7 +29,7 @@ const FormAddComment = () => {
   return (
     <div className={classes.form}>
       <div className={classes.form_img}>
-        <img src="src\assets\cheek.jpg" className='icon' alt="" />
+        <img src="http://cdn.onlinewebfonts.com/svg/img_453063.png" className='icon' alt="profile" />
       </div>
 
       <div className={classes.input_wrapper}>
